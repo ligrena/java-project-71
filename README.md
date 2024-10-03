@@ -23,3 +23,9 @@
 
 ### Вывод различий между двумя .json файлами
 [![asciicast](https://asciinema.org/a/yCu4LjIRn3QrUiFHd2ciKnrDs.svg)](https://asciinema.org/a/yCu4LjIRn3QrUiFHd2ciKnrDs)
+
+### Вывод различий между двумя .yaml файлами
+[![asciicast](https://asciinema.org/a/eF93qqkfdFNt0qh7TWeiTSTpa.svg)](https://asciinema.org/a/eF93qqkfdFNt0qh7TWeiTSTpa)
+
+### Вывод различий между двумя файлами с вложенной структурой
+[![asciicast](https://asciinema.org/a/1kJUhZjrjL6V4rUkqLzmY3RuS.svg)](https://asciinema.org/a/1kJUhZjrjL6V4rUkqLzmY3RuS)

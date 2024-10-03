@@ -17,8 +17,8 @@ public class FormatUtils {
             case "stylish" -> {
                 return stylishFormat(keysParams);
             }
-            case "simple" -> {
-                return simpleFormat(keysParams);
+            case "plain" -> {
+                return plainFormat(keysParams);
             }
             case "json" -> {
                 return jsonFormat(keysParams);
@@ -59,7 +59,7 @@ public class FormatUtils {
         return new ObjectMapper().writeValueAsString(keysParams);
     }
 
-    public static String simpleFormat(
+    public static String plainFormat(
             TreeMap<String, Map<String, Object>> keysParams) throws RuntimeException {
         StringJoiner sj = new StringJoiner("\n");
 
@@ -72,7 +72,7 @@ public class FormatUtils {
                         .equals("same"))
                 .forEach(key -> {
                     try {
-                        sj.add(simpleFormatOperation(key, keysParams.get(key)));
+                        sj.add(plainFormatOperation(key, keysParams.get(key)));
                     } catch (Exception e) {
                         throw new RuntimeException(e);
                     }
@@ -94,7 +94,7 @@ public class FormatUtils {
         };
     }
 
-    private static String simpleFormatOperation(String key, Map<String, Object> params) throws Exception {
+    private static String plainFormatOperation(String key, Map<String, Object> params) throws Exception {
         String operation = params.get("operation").toString();
 
         return switch (operation) {
