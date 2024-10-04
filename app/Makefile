@@ -14,4 +14,7 @@ build:
 install:
 	./gradlew clean installDist
 
+test:
+	./gradlew test
+
 .PHONY: build`
