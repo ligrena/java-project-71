@@ -85,11 +85,11 @@ public class FormatUtils {
         String operation = params.get("operation").toString();
 
         return switch (operation) {
-            case "add" -> String.format(" + %s: %s", key, params.get("value"));
-            case "remove" -> String.format(" - %s: %s", key, params.get("value"));
-            case "same" -> String.format("   %s: %s", key, params.get("value"));
+            case "add" -> String.format("   + %s: %s", key, params.get("value"));
+            case "remove" -> String.format("   - %s: %s", key, params.get("value"));
+            case "same" -> String.format("     %s: %s", key, params.get("value"));
             case "replace" ->
-                    String.format(" - %s: %s\n + %s: %s", key, params.get("oldValue"), key, params.get("newValue"));
+                    String.format("   - %s: %s\n   + %s: %s", key, params.get("oldValue"), key, params.get("newValue"));
             default -> throw new Exception("Unknown operation to format");
         };
     }
