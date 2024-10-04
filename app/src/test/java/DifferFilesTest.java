@@ -12,10 +12,10 @@ public class DifferFilesTest {
         String jsonFile1 = Paths.get("").toAbsolutePath() + "/src/test/resources/file1.json";
         String jsonFile2 = Paths.get("").toAbsolutePath() + "/src/test/resources/file2.json";
 
-        String actual = Differ.generate(jsonFile1, jsonFile2, "json");
+        String actualResult = Differ.generate(jsonFile1, jsonFile2, "json");
         String expectedResult = Differ.getData("src/test/resources/resultedJsonFile.json");
 
-        assertEquals(expectedResult, actual);
+        assertEquals(expectedResult, actualResult);
     }
 
     @Test
@@ -23,10 +23,10 @@ public class DifferFilesTest {
         String yamlFile1 = Paths.get("").toAbsolutePath() + "/src/test/resources/file1.yaml";
         String yamlFile2 = Paths.get("").toAbsolutePath() + "/src/test/resources/file2.yaml";
 
-        String actual = Differ.generate(yamlFile1, yamlFile2);
+        String actualResult = Differ.generate(yamlFile1, yamlFile2);
         String expectedResult = Differ.getData("src/test/resources/resultedYamlFiles");
 
-        assertEquals(expectedResult, actual);
+        assertEquals(expectedResult, actualResult);
     }
 
     @Test
@@ -39,11 +39,9 @@ public class DifferFilesTest {
 
         String actualFileJson = Differ.generate(jsonFile1, jsonFile2);
         String expectedResult = Differ.getData("src/test/resources/resultedStylishFiles");
-
         assertEquals(expectedResult, actualFileJson);
 
         String actualFileYaml = Differ.generate(yamlFile1, yamlFile2);
-
         assertEquals(expectedResult, actualFileYaml);
     }
 
@@ -52,11 +50,9 @@ public class DifferFilesTest {
         String jsonFile1 = Paths.get("").toAbsolutePath() + "/src/test/resources/fileStylish1.json";
         String jsonFile2 = Paths.get("").toAbsolutePath() + "/src/test/resources/fileStylish2.json";
 
-        String actual = Differ.generate(jsonFile1, jsonFile2, "plain");
-        String expected = Differ
-                .getData("src/test/resources/resultedPlainFiles");
+        String actualResult = Differ.generate(jsonFile1, jsonFile2, "plain");
+        String expectedResult = Differ.getData("src/test/resources/resultedPlainFiles");
 
-        assertEquals(expected, actual);
-
+        assertEquals(expectedResult, actualResult);
     }
 }

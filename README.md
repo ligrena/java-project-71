@@ -29,3 +29,6 @@
 
 ### Вывод различий между двумя файлами с вложенной структурой
 [![asciicast](https://asciinema.org/a/1kJUhZjrjL6V4rUkqLzmY3RuS.svg)](https://asciinema.org/a/1kJUhZjrjL6V4rUkqLzmY3RuS)
+
+### Вывод в структурированном формате, таком как json
+[![asciicast](https://asciinema.org/a/GHUwZjbjhemMX4brRDA5cOGJK.svg)](https://asciinema.org/a/GHUwZjbjhemMX4brRDA5cOGJK)

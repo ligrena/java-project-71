@@ -34,17 +34,18 @@ public class Differ {
     public static TreeMap<String, Map<String, Object>> buildDifference(
             Map<String, Object> value1, Map<String, Object> value2) {
         TreeMap<String, Map<String, Object>> keyDiff = new TreeMap<>();
-        List<String> allKeysList = getAllKeysSortedList(value1.keySet(), value2.keySet());
-        allKeysList.forEach(x -> keyDiff.put(x, buildKeyDiff(value1, value2, x)));
+
+        List<String> keysList = getKeysSorted(value1.keySet(), value2.keySet());
+        keysList.forEach(x -> keyDiff.put(x, buildKeyDiff(value1, value2, x)));
 
         return keyDiff;
     }
 
-    public static List<String> getAllKeysSortedList(Set<String> keys1, Set<String> keys2) {
-        Set<String> allKeys = new HashSet<>(keys1);
-        allKeys.addAll(keys2);
+    public static List<String> getKeysSorted(Set<String> key1, Set<String> key2) {
+        Set<String> keys = new HashSet<>(key1);
+        keys.addAll(key2);
 
-        return new ArrayList<>(allKeys).stream().sorted().toList();
+        return new ArrayList<>(keys).stream().sorted().toList();
     }
 
     private static Map<String, Object> buildKeyDiff(

@@ -23,7 +23,7 @@ public class FormatUtils {
             case "json" -> {
                 return jsonFormat(keysParams);
             }
-            default -> throw new Exception("Unknown format for formatting");
+            default -> throw new Exception("Unknown format");
         }
     }
 

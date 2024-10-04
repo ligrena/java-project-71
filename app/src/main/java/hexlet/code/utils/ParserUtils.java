@@ -21,7 +21,7 @@ public class ParserUtils {
                 return yamlMapper.readValue(content, new TypeReference<Map<String, Object>>() {
                 });
             }
-            default -> throw new Exception("Wrong file format. Please use only json format");
+            default -> throw new Exception("Incorrect file format. Please use only json format");
         }
     }
 }

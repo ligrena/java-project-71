@@ -19,7 +19,7 @@ public final class App implements Callable<Integer> {
     @Parameters(index = "1", description = "Path to second file")
     private String filepath2;
 
-    @Option(names = {"-f", "--format"}, description = "output format")
+    @Option(names = {"-f", "--format"}, description = "output format", defaultValue = "stylish")
     private String format = "stylish";
 
     @Override
