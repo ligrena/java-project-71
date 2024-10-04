@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class DifferFilesTest {
 
     @Test
-    public void checkFormatJson() throws Exception {
+    public void testCheckFormatJson() throws Exception {
         String jsonFile1 = Paths.get("").toAbsolutePath() + "/src/test/resources/file1.json";
         String jsonFile2 = Paths.get("").toAbsolutePath() + "/src/test/resources/file2.json";
 
@@ -19,7 +19,7 @@ public class DifferFilesTest {
     }
 
     @Test
-    public void checkFormatYaml() throws Exception {
+    public void testCheckFormatYaml() throws Exception {
         String yamlFile1 = Paths.get("").toAbsolutePath() + "/src/test/resources/file1.yaml";
         String yamlFile2 = Paths.get("").toAbsolutePath() + "/src/test/resources/file2.yaml";
 
@@ -30,7 +30,7 @@ public class DifferFilesTest {
     }
 
     @Test
-    public void checkFormatStylish() throws Exception {
+    public void testCheckFormatStylish() throws Exception {
         String jsonFile1 = Paths.get("").toAbsolutePath() + "/src/test/resources/fileStylish1.json";
         String jsonFile2 = Paths.get("").toAbsolutePath() + "/src/test/resources/fileStylish2.json";
 
@@ -46,7 +46,7 @@ public class DifferFilesTest {
     }
 
     @Test
-    public void checkFormatPlain() throws Exception {
+    public void testCheckFormatPlain() throws Exception {
         String jsonFile1 = Paths.get("").toAbsolutePath() + "/src/test/resources/fileStylish1.json";
         String jsonFile2 = Paths.get("").toAbsolutePath() + "/src/test/resources/fileStylish2.json";
 
