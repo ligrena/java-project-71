@@ -1,6 +1,6 @@
 package hexlet.code;
 
-public class Operation {
+public final class Operation {
 
     public static final String ADD = "add";
     public static final String REMOVE = "remove";
