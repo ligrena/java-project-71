@@ -27,7 +27,7 @@ public class KeyDiffBuilder {
             } else if (!Objects.equals(value1.get(key), value2.get(key))) {
                 keyDiff.put(key, new Operation(Operation.REPLACE, value1.get(key), value2.get(key)));
             } else {
-                throw new RuntimeException(String.format("Unknown status: %s", key));
+                throw new RuntimeException(String.format("Unknown operation: %s", key));
             }
         }
         return keyDiff;
