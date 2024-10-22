@@ -1,36 +1,31 @@
 package hexlet.code.utils.formatters;
 
+import hexlet.code.Operation;
+
 import java.util.Map;
 import java.util.StringJoiner;
-import java.util.TreeMap;
 
 public class StylishFormatter {
 
-    public static String stylishFormat(
-            TreeMap<String, Map<String, Object>> keysParams) throws RuntimeException {
+    public static String stylishFormat(Map<String, Operation> keysParams) throws RuntimeException {
         StringJoiner sj = new StringJoiner("\n", "{\n", "\n}");
 
-        keysParams.navigableKeySet().forEach(key -> {
-            try {
-                sj.add(stylishFormatOperation(key, keysParams.get(key)));
-            } catch (Exception e) {
-                throw new RuntimeException(e);
+        for (var entry : keysParams.entrySet()) {
+            String key = entry.getKey();
+            Operation operation = entry.getValue();
+            var oldValue = operation.getOldValue();
+            var newValue = operation.getNewValue();
+            var operationType = operation.getOperation();
+
+            switch (operationType) {
+                case Operation.ADD -> sj.add(String.format("  + %s: %s", key, newValue));
+                case Operation.REMOVE -> sj.add(String.format("  - %s: %s", key, oldValue));
+                case Operation.SAME -> sj.add(String.format("    %s: %s", key, oldValue));
+                case Operation.REPLACE ->
+                        sj.add(String.format("  - %s: %s\n  + %s: %s", key, oldValue, key, newValue));
+                default -> new RuntimeException("Unknown operation to format");
             }
-        });
-
+        }
         return sj.toString();
-    }
-
-    private static String stylishFormatOperation(String key, Map<String, Object> params) throws Exception {
-        String operation = params.get("operation").toString();
-
-        return switch (operation) {
-            case "add" -> String.format("  + %s: %s", key, params.get("value"));
-            case "remove" -> String.format("  - %s: %s", key, params.get("value"));
-            case "same" -> String.format("    %s: %s", key, params.get("value"));
-            case "replace" ->
-                    String.format("  - %s: %s\n  + %s: %s", key, params.get("oldValue"), key, params.get("newValue"));
-            default -> throw new Exception("Unknown operation to format");
-        };
     }
 }

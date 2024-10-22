@@ -1,5 +1,6 @@
 package hexlet.code.utils;
 
+import hexlet.code.Operation;
 import hexlet.code.utils.formatters.JsonFormatter;
 import hexlet.code.utils.formatters.PlainFormatter;
 import hexlet.code.utils.formatters.StylishFormatter;
@@ -7,12 +8,10 @@ import hexlet.code.utils.formatters.StylishFormatter;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Map;
-import java.util.TreeMap;
 
 public class FormatUtils {
 
-    public static String format(
-            TreeMap<String, Map<String, Object>> keysParams, String format) throws Exception {
+    public static String format(Map<String, Operation> keysParams, String format) throws Exception {
         switch (format) {
             case "stylish" -> {
                 return StylishFormatter.stylishFormat(keysParams);
